@@ -31,15 +31,5 @@ async function promise(){
     console.timeEnd('promise');
 }
 
-// console.time('main');
-// main()
-// console.timeEnd('main');
-// await test('test')
-// await test('1111')
-// console.time('promiseTest');
-// promiseTest();
-// console.timeEnd('promiseTest');
-
-
-promiseAll();
 promise();
+promiseAll();
