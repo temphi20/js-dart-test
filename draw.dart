@@ -15,12 +15,14 @@ class Test extends Object {
 }
 
 class DObject extends Object {
-  DObject({required this.id, this.name = ""});
+  DObject({required this.id, this.name = ""})
+      : assert(id.trim().isNotEmpty, "ID($id) should not be empty");
 
   final String id;
   String name;
 
-  DObject copyWith({String name = ""}) => new DObject(id: id, name: name);
+  DObject copyWith({String? id, String? name}) =>
+      new DObject(id: id ?? this.id, name: name ?? this.name);
 
   @override
   bool operator ==(Object other) => other is DObject ? other.id == id : false;
