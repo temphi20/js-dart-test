@@ -30,18 +30,31 @@ class DObject extends Object {
   int get hashCode => id.hashCode;
 
   @override
-  String toString() => "($id: $name)";
+  String toString() => name;
+}
+
+class EDObject extends DObject {
+  EDObject({required super.id, super.name, this.explain = ""});
+
+  String explain;
+
+  @override
+  EDObject copyWith({String? id, String? name, String? explain}) {
+    final EDObject tmp = super.copyWith(id: id, name: name) as EDObject;
+    tmp.explain = explain ?? this.explain;
+    return tmp;
+  }
 }
 
 void main() {
-  final List list = [];
-  print(list.last);
-  // Test test = Test();
-  Test.func();
-  Test.func();
-  Test.func();
+  // final List list = [];
+  // print(list.last);
+  // // Test test = Test();
+  // Test.func();
+  // Test.func();
+  // Test.func();
 
-  Test(00);
-  Test(010);
-  Test(0x10);
+  // Test(00);
+  // Test(010);
+  // Test(0x10);
 }
