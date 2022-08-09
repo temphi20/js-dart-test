@@ -14,7 +14,6 @@ function forIndex(iterable){
 
 function forIn(iterable){
     try {
-        const _iterable = iterable.map(x => );
         for (let el in iterable){
             console.log(`${el}`);
         }
